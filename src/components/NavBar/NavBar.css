@@ -1,0 +1,67 @@
+nav {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-black);
+    padding: 0.7rem 2rem;
+}
+.navlist {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.navlogo img {
+    max-width: 119px;
+}
+.hamburgericon svg {
+    width: 32px;
+    fill: var(--white);
+    stroke: none;
+}
+.searchbar {
+    display: flex;
+    /* align-items: center; */
+    margin: auto;
+}
+.searchbar .input-control {
+    display: flex;
+    align-items: center;
+    /* overflow: hidden; */
+    background-color: var(--bg-black);border-top-left-radius: 100vmax;
+    border-bottom-left-radius: 100vmax;
+}
+.searchbar input {
+    background-color: var(--bg-black);
+    border: none;
+    border-top-left-radius: 100vmax;
+    border-bottom-left-radius: 100vmax;
+    padding: 0rem 2rem;
+    font-size: 1.25rem;
+    color: var(--white);
+    width: 644px;
+}
+.searchbar input::placeholder {
+    /* color: white; */
+}
+.searchbar input:focus-visible {
+    outline: transparent;
+}
+.searchbutton {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.575rem 1.875rem;
+    padding-left: 1.65rem;
+    background-color: var(--neutral);
+
+    border-top-right-radius: 100vmax;
+    border-bottom-right-radius: 100vmax;
+}
+.searchbutton:focus-visible{
+    outline: transparent;
+}
+.searchbutton img {
+    max-width: 30px;
+    aspect-ratio: 1;
+}

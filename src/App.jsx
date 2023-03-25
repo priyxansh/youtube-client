@@ -1,10 +1,12 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import NavBar from "./components/NavBar/NavBar";
-import Feed from "./components/Feed/Feed";
-import SearchFeed from "./components/SearchFeed/SearchFeed";
-import VideoDetails from "./components/VideoDetails/VideoDetails";
-import ChannelDetails from "./components/ChannelDetails/ChannelDetails";
+import {
+    NavBar,
+    Feed,
+    SearchFeed,
+    VideoDetails,
+    ChannelDetails,
+} from "./components/index";
 
 function App() {
     return (
