@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import {
     NavBar,
+    SideBar,
     Feed,
     SearchFeed,
     VideoDetails,
@@ -12,6 +13,7 @@ function App() {
     return (
         <Router>
             <NavBar />
+            <SideBar />
             <Routes>
                 <Route path="/" element={<Feed />} />
                 <Route path="/video/:id" element={<VideoDetails />} />

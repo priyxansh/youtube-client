@@ -1,0 +1,32 @@
+.sidebar {
+    height: 100%;
+    padding: 0 0.875rem;
+    background-color: var(--bg-black);
+
+    display: flex;
+    flex-direction: column;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+.sidebar.expanded {
+    max-width: 320px;
+    opacity: 1;
+    pointer-events: all;
+}
+.categories {
+    display: flex;
+    flex-direction: column;
+}
+.category {
+    color: var(--text-white);
+    font-size: 1rem;
+    font-family: "Roboto";
+    padding: 1.25rem;
+    cursor: pointer;
+    border-radius: 15px;
+}
+.category:hover {
+    background-color: var(--neutral);
+}
