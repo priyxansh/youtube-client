@@ -20,6 +20,22 @@ html {
 }
 #root{
     height: 100%;
+    
+    display: grid;
+    grid-template-rows: auto 10fr;
+    grid-template-areas: 
+    "navbar navbar"
+    "sidebar feed"
+    ;
+}
+nav{
+    grid-area: navbar;
+}
+.sidebar{
+    grid-area: sidebar;
+}
+.feed{
+    grid-area: feed;
 }
 a {
     text-decoration: none;

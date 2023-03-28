@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Expanded } from "../../App";
 import "./SideBar.css";
 
 const categories = [
@@ -16,17 +17,23 @@ const categories = [
 ];
 
 export default function SideBar() {
-    const [expanded, setExpanded] = useState(true);
+    const expanded = useContext(Expanded);
 
     return (
-        <aside className="sidebar">
+        <aside className="sidebar" data-isexpanded={expanded}>
             <div className="categories">
                 {categories.map((category) => (
-                    <div className="category">
-                        <span>{category.title}</span>
-                    </div>
+                    <Category title={category.title} key={category.key} />
                 ))}
             </div>
         </aside>
     );
 }
+
+let Category = ({ title }) => {
+    return (
+        <div className="category">
+            <span>{title}</span>
+        </div>
+    );
+};

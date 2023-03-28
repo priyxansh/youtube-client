@@ -1,13 +1,17 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
-export default function NavBar() {
+export default function NavBar({ hamburgerClick }) {
     return (
         <nav>
             <ul className="navlist">
                 <li className="navitem">
-                    <Link to="/" className="navlink hamburgericon">
+                    <Link
+                        to="/"
+                        className="navlink hamburgericon"
+                        onClick={hamburgerClick}
+                    >
                         <svg
                             viewBox="0 0 24 24"
                             preserveAspectRatio="xMidYMid meet"
@@ -35,6 +39,25 @@ export default function NavBar() {
 const SearchBar = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const searchBarRef = useRef(null);
+    const searchInputRef = useRef(null);
+
+    const focusSearch = (e) => {
+        if (
+            e.keyCode === 191 &&
+            document.activeElement !== searchInputRef.current
+        ) {
+            e.preventDefault();
+            searchInputRef.current.focus();
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("keydown", focusSearch);
+
+        return () => {
+            window.removeEventListener("keydown", focusSearch);
+        };
+    }, []);
 
     return (
         <div className="searchbar">
@@ -44,6 +67,7 @@ const SearchBar = () => {
                     type="text"
                     name="search-input"
                     id="search-input"
+                    ref={searchInputRef}
                     value={searchTerm}
                     onChange={(event) => {
                         setSearchTerm(event.target.value);
@@ -57,11 +81,11 @@ const SearchBar = () => {
                     }}
                 />
             </form>
-                <button type="button" className="searchbutton">
-                    <span className="searchicon">
-                        <img src="../../src/assets/search-icon.svg" alt="" />
-                    </span>
-                </button>
+            <button type="button" className="searchbutton">
+                <span className="searchicon">
+                    <img src="../../src/assets/search-icon.svg" alt="" />
+                </span>
+            </button>
         </div>
     );
 };

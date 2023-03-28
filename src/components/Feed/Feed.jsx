@@ -1,5 +1,7 @@
 import React from "react";
 
 export default function Feed() {
-    return null;
+    return (
+        <div className="feed"></div>
+    );
 }
